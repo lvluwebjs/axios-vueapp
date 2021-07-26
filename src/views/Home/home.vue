@@ -11,6 +11,9 @@ export default {
   data() {
     return {};
   },
+  mounted(){
+   this.$store.dispatch('Get_DATA')
+  },
   components: {
     Quit,
   },

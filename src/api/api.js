@@ -3,11 +3,18 @@ import qs from 'qs'
 //引入封装后的axios请求
 import $ajax from '../request/request.js'
 /* 此文件用来统一管理项目所有API接口请求 */
-export default  function Login(data){
+export function Login(data){
   //登录接口
   return $ajax({
       method:'post',
       url:'/userlogin',
       data:qs.stringify(data)
+     })
+}
+export function GetData(){
+  //获取测试数据接口
+  return $ajax({
+      method:'post',
+      url:'/checktoken',
      })
 }

@@ -22,3 +22,11 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### git 
+```
+git remote add origin https://github.com/lvluwebjs/axios-vueapp.git
+
+git push origin master -u
+
+```

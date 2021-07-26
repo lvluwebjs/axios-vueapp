@@ -24,7 +24,7 @@ export default {
         alert("用户名或者密码不能为空");
       } else {
         this.$store.dispatch("AJAX_LOGIN", this.obj);
-        this.$router.push("/home");
+        // this.$router.push("/home");
         // console.log(this.$route.path);
       }
     },

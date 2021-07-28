@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 Vue.use(Router)
 const router = new Router({ 
+  mode:'history',
   routes : [
     {
    // 设置为默认路由

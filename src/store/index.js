@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+//引入自定义封装的数据请求方法
 import {Login,GetData} from "../api/api.js";
 import router from '../router/index.js'
 //引入vuex插件
@@ -22,16 +23,21 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    //登录接口请求
     async AJAX_LOGIN({commit},data){
       const result = await Login(data);
-      // let num = Math.random() * 0.01;
-      // let token = result.data.token + num.toString().substring(6);
-      let token = result.data.token
-      sessionStorage.setItem("tokens", token);
-      commit('TOKEN_LOGIN',token)
-      // vue防止跳转到主页后返回到登陆页面,验证通过后用replace（）跳转
-      router.push('./home')
+      // console.log(result.data);
+      if(result.data.status == 602){
+        alert(result.data.msg)
+      }else{
+        let token = result.data.token
+        sessionStorage.setItem("tokens", token);
+        commit('TOKEN_LOGIN',token)
+        // vue防止跳转到主页后返回到登陆页面,验证通过后用replace（）跳转
+        router.push('./home')
+      }
     },
+    //携带token后来请求数据接口
     async Get_DATA({commit}){
       const result = await GetData();
       commit('TOKEN_DATA',result)
@@ -39,5 +45,7 @@ export default new Vuex.Store({
   },
   modules: {}
 });
+       
+     
     
       

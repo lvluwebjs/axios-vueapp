@@ -1,6 +1,8 @@
 <template>
   <div>
-    home
+    <div>
+      {{$store.state.usernames}}
+    </div>
     <Quit />
   </div>
 </template>

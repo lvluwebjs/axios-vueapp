@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      {{$store.state.usernames}}
+     {{user}}---
     </div>
     <Quit />
   </div>
@@ -15,6 +15,11 @@ export default {
   },
   mounted(){
    this.$store.dispatch('Get_DATA')
+  },
+  computed:{
+   user:function(){
+    return sessionStorage.getItem('username')
+   }
   },
   components: {
     Quit,

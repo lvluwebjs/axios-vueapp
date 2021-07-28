@@ -16,15 +16,15 @@ export default new Vuex.Store({
 
   },
   mutations: {
-    TOKEN_LOGIN(state,dataArr){
-      state.token = dataArr.token
-      state.usernames = dataArr[0].username
-
+    TOKEN_LOGIN(state,data){
+      state.token = data.token
+      state.usernames = data.username
     },
     TOKEN_DATA(state,result){
-     console.log(result);
+      console.log(result);
     }
   },
+
   actions: {
     //登录接口请求
     async AJAX_LOGIN({commit},data){
@@ -32,19 +32,16 @@ export default new Vuex.Store({
       if(result.data.status == 602){
         alert(result.data.msg)
       }else{
-        // console.log(result.data);
         let token = result.data.token
         sessionStorage.setItem("tokens", token);
-        var dataArr=[]
-        dataArr.push(data)
-        dataArr.push(token)
-        console.log(dataArr);
-        commit('TOKEN_LOGIN',dataArr)
+        data['token'] = token
+        console.log(data);
+        commit('TOKEN_LOGIN',data)
         // vue防止跳转到主页后返回到登陆页面,验证通过后用replace（）跳转
         router.push('./home')
-
-      }
-    },
+}
+       
+},
     //携带token后来请求数据接口
     async Get_DATA({commit}){
       const result = await GetData();

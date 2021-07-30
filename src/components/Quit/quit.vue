@@ -11,11 +11,11 @@ export default {
   },
 
   methods: {
-      Quit(){
-          sessionStorage.removeItem('tokens');
-          sessionStorage.removeItem('username');
-          this.$router.replace('./login')
-      }
+    Quit() {
+      sessionStorage.removeItem("tokens");
+      sessionStorage.removeItem("username");
+      this.$router.replace("./login");
+    },
   },
 };
 </script>

@@ -3,7 +3,7 @@ module.exports = {
   //   devServer: {
   // proxy: { 
   //   '/api': {
-  //     target: 'http://apiv2.shawdo.com:8080/api/', // 这里为请求跨域的地址http://apiv2.shawdo.com:8080
+  //     target: 'http://apiv2.shawdo.com:8080', // 这里为请求跨域的地址http://apiv2.shawdo.com:8080
   //     ws: true,
   //     changOrigin: true, // 允许跨域
   //     pathRewrite: {

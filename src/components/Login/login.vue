@@ -30,29 +30,29 @@ export default {
 };
 </script>
 
-<style scoped>
-.login {
-  width: 300px;
-  height: 300px;
-  border: 1px solid black;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  text-align: center;
-  padding: 80px 80px;
-  box-sizing: border-box;
-}
-input {
-  width: 180px;
-  height: 35px;
-  outline: none;
-}
-.bg {
+<style lang="scss" scoped>
+div.bg {
   height: 100%;
   width: 100%;
   position: fixed;
   background: url("../../assets/img/login.png");
   background-size: 100% 100%;
+  div.login {
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+    padding: 80px 80px;
+    box-sizing: border-box;
+    input {
+      width: 180px;
+      height: 35px;
+      outline: none;
+    }
+  }
 }
 </style>

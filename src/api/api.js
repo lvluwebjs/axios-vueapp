@@ -29,4 +29,5 @@ export const GetData = () => {
 export const conData = () => {
   //测试
   console.log('哈哈哈哈');
+  console.log('呵呵呵呵');
 }

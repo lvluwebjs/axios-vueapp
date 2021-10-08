@@ -25,3 +25,8 @@ export const GetData = () => {
       url:'/checktoken',
      })
 }
+
+export const conData = () => {
+  //测试
+  console.log('哈哈哈哈');
+}

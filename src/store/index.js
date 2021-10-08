@@ -23,7 +23,7 @@ export default new Vuex.Store({
       sessionStorage.setItem("username",username);
     },
     TOKEN_DATA(state,result){
-      // console.log(result);
+      console.log(result);
     }
   },
 
@@ -40,7 +40,8 @@ export default new Vuex.Store({
         // console.log(data);
         commit('TOKEN_LOGIN',payload)
         // vue防止跳转到主页后返回到登陆页面,验证通过后用replace（）跳转
-        router.push('./home')
+        router.replace('./home')
+      
 }
        
 },

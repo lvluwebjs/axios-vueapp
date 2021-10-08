@@ -48,6 +48,17 @@ router.beforeEach((to, from, next) => {
     next()
   } else {
     if (token) { //判断用户是否登录
+      // Object.keys返回值： 一个表示给定对象的所有可枚举属性的字符串数组
+      // 二、 处理对象， 返回可枚举的属性数组
+
+      // let person = {
+      //   name: "张三",
+      //   age: 25,
+      //   address: "深圳",
+      //   getName: function () {}
+      // }
+
+      // Object.keys(person) // ["name", "age", "address","getName"]
       if (Object.keys(from.query).length === 0) { //判断路由来源是否有query，处理不是目的跳转的情况
         next()
       } else {
